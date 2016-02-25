@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel src -d lib",
-    "start": "./node_modules/.bin/babel-node --presets react,es2015 src"
+    "start": "./node_modules/.bin/babel-node --presets react,es2015,stage-0 src"
   },
   "author": "",
   "license": "ISC",
@@ -22,9 +22,10 @@
   },
   "devDependencies": {
     "babel-cli": "^6.5.1",
-    "babel-core": "^6.5.1",
+    "babel-core": "^6.5.2",
     "babel-loader": "^6.2.2",
     "babel-preset-es2015": "^6.5.0",
-    "babel-preset-react": "^6.5.0"
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0"
   }
 }
