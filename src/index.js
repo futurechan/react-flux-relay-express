@@ -2,12 +2,18 @@
 
 import express from 'express'
 import path from 'path'
-
+import schema from './data/schema';
+import GraphQLHTTP from 'express-graphql';
 import {MongoClient} from 'mongodb';
 
 let app = express()
 
 app.use(express.static(path.join(__dirname,'public')));
+
+app.use('/graphql', GraphQLHTTP({
+  schema,
+  graphiql: true
+}))
 
 let db;
 MongoClient.connect(process.env.MONGO_URL, (err, database) => {
